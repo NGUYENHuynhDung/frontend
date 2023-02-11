@@ -133,13 +133,15 @@ function App() {
 
       {/* Form */}
       {/* Create */}
-      <FormCreate
-        openCreate={openCreate}
-        setOpenCreate={setOpenCreate}
-        setTodoItemAll={setTodoItemAll}
-        setTodoItemsComplete={setTodoItemsComplete}
-        setTodoItemsIncomplete={setTodoItemsIncomplete}
-      />
+      {openCreate ? (
+        <FormCreate
+          openCreate={openCreate}
+          setOpenCreate={setOpenCreate}
+          setTodoItemAll={setTodoItemAll}
+          setTodoItemsComplete={setTodoItemsComplete}
+          setTodoItemsIncomplete={setTodoItemsIncomplete}
+        />
+      ) : null}
     </Stack>
   );
 }

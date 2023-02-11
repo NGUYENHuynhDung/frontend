@@ -91,30 +91,6 @@ export default function TodoList(props) {
               </Stack>
             </Stack>
           ))}
-          {/* Form */}
-          {/* Edit */}
-          {dataSelect ? (
-            <FormEdit
-              dataSelect={dataSelect}
-              openEdit={openEdit}
-              setOpenEdit={setOpenEdit}
-              setTodoItemAll={setTodoItemAll}
-              setTodoItemsComplete={setTodoItemsComplete}
-              setTodoItemsIncomplete={setTodoItemsIncomplete}
-            />
-          ) : null}
-
-          {/* Delete */}
-          {dataSelect ? (
-            <FormDelete
-              dataSelect={dataSelect}
-              openDelete={openDelete}
-              setOpenDelete={setOpenDelete}
-              setTodoItemAll={setTodoItemAll}
-              setTodoItemsComplete={setTodoItemsComplete}
-              setTodoItemsIncomplete={setTodoItemsIncomplete}
-            />
-          ) : null}
         </>
       ) : (
         <Typography
@@ -127,6 +103,30 @@ export default function TodoList(props) {
           You currently have no tasks. Click "ADD TASK" to create a task.
         </Typography>
       )}
+      {/* Form */}
+      {/* Edit */}
+      {openEdit ? (
+        <FormEdit
+          dataSelect={dataSelect}
+          openEdit={openEdit}
+          setOpenEdit={setOpenEdit}
+          setTodoItemAll={setTodoItemAll}
+          setTodoItemsComplete={setTodoItemsComplete}
+          setTodoItemsIncomplete={setTodoItemsIncomplete}
+        />
+      ) : null}
+
+      {/* Delete */}
+      {openDelete ? (
+        <FormDelete
+          dataSelect={dataSelect}
+          openDelete={openDelete}
+          setOpenDelete={setOpenDelete}
+          setTodoItemAll={setTodoItemAll}
+          setTodoItemsComplete={setTodoItemsComplete}
+          setTodoItemsIncomplete={setTodoItemsIncomplete}
+        />
+      ) : null}
     </Stack>
   );
 }
